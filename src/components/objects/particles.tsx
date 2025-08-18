@@ -22,7 +22,7 @@ export default function Particles() {
                     array={pointsArray}
                 />
             </bufferGeometry>
-            <pointsMaterial size={0.05} color="orange" />
+            <pointsMaterial size={0.05} color="white" />
         </points>
     )
 }
