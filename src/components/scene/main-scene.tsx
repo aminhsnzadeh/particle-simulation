@@ -10,6 +10,7 @@ export default function MainScene() {
                 count={3000}
                 particleSize={0.2}
                 spaceSize={50}
+                speed={0.1}
                 // texturePath="./texture/spark.webp"
             />
             {/* handling better on camera for example near and far values */}
