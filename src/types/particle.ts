@@ -6,6 +6,7 @@ interface particleModelType {
     texturePath?: string
     disableRotate?: boolean
     color?: string
+    speed?: number
 }
 
 export type {

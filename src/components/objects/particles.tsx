@@ -5,7 +5,7 @@ import {useRef} from "react";
 import * as THREE from "three";
 
 
-export default function Particles({ particleSize, spaceSize, count, texturePath, disableRotate, color }: particleModelType) {
+export default function Particles({ particleSize, spaceSize, count, texturePath, disableRotate, color, speed }: particleModelType) {
 
     //loading texture from texture folder in public
     const texture = useTexture(texturePath || "./texture/snowflake.png")
@@ -26,8 +26,8 @@ export default function Particles({ particleSize, spaceSize, count, texturePath,
         if(!disableRotate) {
             console.log(state)
             if(particleRef.current) {
-                particleRef.current.rotation.x += delta - 0.02;
-                particleRef.current.rotation.y += delta - 0.02;
+                particleRef.current.rotation.x += delta * (speed || 0.1);
+                particleRef.current.rotation.y += delta * (speed || 0.1);
             }
 
         }
