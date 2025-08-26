@@ -6,7 +6,7 @@ import useMainSceneDebugger from "../debugs/scene/main.tsx";
 
 export default function MainScene() {
 
-    const { count, particleSize, spaceSize, speed } = useParticleDebugger()
+    const { count, particleSize, spaceSize, speed, disableAnimation, color } = useParticleDebugger()
     const { background } = useMainSceneDebugger()
 
     return (
@@ -16,7 +16,8 @@ export default function MainScene() {
                 particleSize={particleSize}
                 spaceSize={spaceSize}
                 speed={speed}
-                // texturePath="./texture/spark.webp"
+                disableRotate={disableAnimation}
+                color={color}
             />
             {/* handling better on camera for example near and far values */}
             <PerspectiveCamera makeDefault position={[0, 0, 5]} near={0.1} far={2000} />
