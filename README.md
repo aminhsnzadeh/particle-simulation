@@ -6,7 +6,7 @@ Designed for quick integration into 3D scenes — supports textures, rotation, c
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-19.1-61dafb?logo=react&logoColor=white" />
-  <img src="https://img.shields.io/badge/Three.js-r150-black?logo=three.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Three.js-black?logo=three.js&logoColor=white" />
   <img src="https://img.shields.io/badge/React--Three--Fiber-v8-000000?logo=react&logoColor=white" />
   <img src="https://img.shields.io/badge/Leva-Controls-8b5cf6?logo=slack&logoColor=white" />
   <img src="https://img.shields.io/badge/Architecture-Clean-brightgreen" />
