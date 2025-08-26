@@ -1,30 +1,33 @@
 import type {particleModelType} from "../../types/particle.ts";
 import {useTexture} from "@react-three/drei";
 import {useFrame} from "@react-three/fiber";
-import {useRef} from "react";
+import {useMemo, useRef} from "react";
 import * as THREE from "three";
-
 
 export default function Particles({ particleSize, spaceSize, count, texturePath, disableRotate, color, speed }: particleModelType) {
 
     //loading texture from texture folder in public
     const texture = useTexture(texturePath || "./texture/snowflake.png")
 
-    const particleRef = useRef<THREE.Points>(null);
+    const particleRef = useRef<THREE.Points>(null)
 
     const particleCount = count
-    const pointsArray = new Float32Array(particleCount * 3)
 
-    for(let i = 0; i < particleCount; i++) {
-        const i3 = i * 3
+    const pointsArray = useMemo(() => {
+        const array = new Float32Array(particleCount * 3)
 
-        pointsArray[i3] = (Math.random() - 0.5) * spaceSize
-        pointsArray[i3 + 1] = (Math.random() - 0.5) * spaceSize
-        pointsArray[i3 + 2] = (Math.random() - 0.5) * spaceSize
-    }
-    useFrame((state, delta) => {
+        for(let i = 0; i < particleCount; i++) {
+            const i3 = i * 3
+
+            array[i3] = (Math.random() - 0.5) * spaceSize
+            array[i3 + 1] = (Math.random() - 0.5) * spaceSize
+            array[i3 + 2] = (Math.random() - 0.5) * spaceSize
+        }
+        return array
+    }, [count, speed, spaceSize])
+
+    useFrame((_, delta) => {
         if(!disableRotate) {
-            console.log(state)
             if(particleRef.current) {
                 particleRef.current.rotation.x += delta * (speed || 0.1);
                 particleRef.current.rotation.y += delta * (speed || 0.1);
