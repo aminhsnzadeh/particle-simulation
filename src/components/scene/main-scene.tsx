@@ -1,16 +1,21 @@
 import {Canvas} from "@react-three/fiber";
 import {OrbitControls, PerspectiveCamera} from "@react-three/drei";
 import Particles from "../objects/particles.tsx";
+import useParticleDebugger from "../debugs/objects/particle.tsx";
+import useMainSceneDebugger from "../debugs/scene/main.tsx";
 
 export default function MainScene() {
 
+    const { count, particleSize, spaceSize, speed } = useParticleDebugger()
+    const { background } = useMainSceneDebugger()
+
     return (
-        <Canvas style={{width:'100%', height:'100vh'}} >
+        <Canvas style={{width:'100%', height:'100vh', backgroundColor: background}} gl={{ antialias: false, powerPreference: "high-performance" }} >
             <Particles
-                count={3000}
-                particleSize={0.2}
-                spaceSize={50}
-                speed={0.1}
+                count={count}
+                particleSize={particleSize}
+                spaceSize={spaceSize}
+                speed={speed}
                 // texturePath="./texture/spark.webp"
             />
             {/* handling better on camera for example near and far values */}
