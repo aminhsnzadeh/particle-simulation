@@ -24,6 +24,8 @@ export default function useParticleDebugger() {
             max: 1,
             step: 0.01,
         },
+        disableAnimation: false,
+        color: "#fff"
     })
 
     return controls
