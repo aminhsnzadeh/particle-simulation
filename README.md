@@ -64,15 +64,15 @@ Or pass textures props to component with your textures that exist in public/text
 
 You can control all of these props shown here at debugging panel :
 
-| Prop            | Type      | Default                   | Description                 |
-| --------------- | --------- | ------------------------- | --------------------------- |
-| `particleSize`  | `number`  | `0.2`                     | Size of each particle       |
-| `spaceSize`     | `number`  | `30`                      | Spatial spread of particles |
-| `count`         | `number`  | `3000`                    | Number of particles         |
-| `texturePath`   | `string`  | `./texture/snowflake.png` | Path to particle texture    |
-| `disableRotate` | `boolean` | `false`                   | Disable auto-rotation       |
-| `color`         | `string`  | `"white"`                 | Color tint for particles    |
-| `speed`         | `number`  | `0.1`                     | Rotation speed              |
+| Prop               | Type      | Default                   | Description                      |
+| ------------------ | --------- | ------------------------- | -------------------------------- |
+| `particleSize`     | `number`  | `0.2`                     | Size of each particle            |
+| `spaceSize`        | `number`  | `30`                      | Spatial spread of particles      |
+| `count`            | `number`  | `3000`                    | Number of particles              |
+| `disableAnimation` | `boolean` | `false`                   | Disable rotation animation       |
+| `color`            | `color`   | `#ffffff`                 | Color tint for particles         |
+| `speed`            | `number`  | `0.1`                     | Rotation speed                   |
+| `background`       | `color`   | `#000000`                 | Color for background             |
 
 
 ## 🔮 Future ideas
